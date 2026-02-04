@@ -191,4 +191,10 @@ body {
 
 .service-card:hover h3 {
   color: #007bff;
+
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }
