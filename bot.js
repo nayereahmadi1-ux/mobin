@@ -3,7 +3,12 @@ const axios = require("axios");
 const app = express();
 app.use(express.json());
 
-const TOKEN = "1731130247:1H4m73yGPaRF0S8fDFUN8d0TyBWN1jfNUtE";
+const TOKEN = process.env.BOT_TOKEN;
+
+if (!token) {
+  console.error("Error: BOT_TOKEN is not defined in environment variables!");
+  process.exit(1);
+}
 const BASE = `https://tapi.bale.ai/bot${TOKEN}`;
 let warnings = {}; // user_id -> count
 let lastMessage = {}; // برای تشخیص اسپم
